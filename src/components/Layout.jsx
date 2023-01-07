@@ -1,59 +1,79 @@
-import useMobile from '../hooks/useMobile';
 import { useLocation, useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
 
-// location에 따라서 색깔 바뀌도록 설정
-function locationCheck(currentPath, selectPath) {
-  if (currentPath === selectPath) {
-    return `bg-main border-main`;
-  } else {
-    return null;
+const NavContainer = styled.nav`
+  width: 10vw;
+  height: 100%;
+  font-family: 'Nats';
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: none;
+`;
+
+const NavCircle = styled.div`
+  width: 3vw;
+  height: 3vw;
+  border-radius: 50%;
+  margin: 0.5rem;
+  border: 1px solid black;
+  cursor: pointer;
+
+  /**********************path에 따라 변하는 버튼 색 */
+
+  :first-child {
+    background-color: ${(props) => (props.pathname === '/' ? '#feff67' : 'white')};
   }
-}
 
-export default function Layout({ children }) {
-  const mobile = useMobile();
-  const loc = useLocation();
+  :nth-child(2) {
+    background-color: ${(props) => (props.pathname === '/collect' ? '#feff67' : 'white')};
+  }
+
+  :nth-child(3) {
+    background-color: ${(props) => (props.pathname === '/push' ? '#feff67' : 'white')};
+  }
+
+  :nth-child(4) {
+    background-color: ${(props) => (props.pathname === '/pull' ? '#feff67' : 'white')};
+  }
+`;
+
+export default function Layout() {
+  const { pathname } = useLocation();
   const nav = useNavigate();
 
-  if (mobile) {
-    return <main className="max-w-full h-screen m-5">{children}</main>;
+  function handleOnClick(pathname) {
+    nav(pathname);
   }
 
   return (
-    <main className="max-w-full h-screen m-12 flex">
-      <nav className="w-full ">
-        <div className="flex flex-col w-4 mr-8 h-full justify-center items-center">
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-              nav('/');
-            }}
-            className={`w-8 h-8 rounded-full border-2 border-black my-2 ${locationCheck(loc.pathname, '/')}`}
-          ></button>
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-              nav('/collect');
-            }}
-            className={`w-8 h-8 rounded-full border-2 border-black my-2 ${locationCheck(loc.pathname, '/collect')}`}
-          ></button>
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-              nav('/push');
-            }}
-            className={`w-8 h-8 rounded-full border-2 border-black my-2 ${locationCheck(loc.pathname, '/push')}`}
-          ></button>
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-              nav('/pull');
-            }}
-            className={`w-8 h-8 rounded-full border-2 border-black my-2 ${locationCheck(loc.pathname, '/pull')}`}
-          ></button>
-        </div>
-      </nav>
-      {children}
-    </main>
+    <NavContainer>
+      <NavCircle
+        pathname={pathname}
+        onClick={() => {
+          handleOnClick('/');
+        }}
+      />
+      <NavCircle
+        pathname={pathname}
+        onClick={() => {
+          handleOnClick('/collect');
+        }}
+      />
+      <NavCircle
+        pathname={pathname}
+        onClick={() => {
+          handleOnClick('/push');
+        }}
+      />
+      <NavCircle
+        pathname={pathname}
+        onClick={() => {
+          handleOnClick('/pull');
+        }}
+      />
+    </NavContainer>
   );
 }

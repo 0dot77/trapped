@@ -1,32 +1,32 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Collect from './pages/Collect';
-import Push from './pages/Push';
-import Pull from './pages/Pull';
+import Layout from '../components/Layout';
+import Home from './Home';
+import Collect from './Collect';
+import Pull from './Pull';
+import Push from './Push';
 
-function App() {
+export default function Router() {
   return (
     <BrowserRouter>
+      <Layout />
       <Routes>
         <Route
           path="/"
           element={<Home />}
         />
         <Route
-          path="/collect"
+          path="/"
           element={<Collect />}
         />
         <Route
-          path="/push"
+          path="/"
           element={<Push />}
         />
         <Route
-          path="/pull"
+          path="/"
           element={<Pull />}
         />
       </Routes>
     </BrowserRouter>
   );
 }
-
-export default App;
