@@ -15,15 +15,15 @@ export default function Router() {
           element={<Home />}
         />
         <Route
-          path="/"
+          path="/collect"
           element={<Collect />}
         />
         <Route
-          path="/"
+          path="/push"
           element={<Push />}
         />
         <Route
-          path="/"
+          path="/pull"
           element={<Pull />}
         />
       </Routes>

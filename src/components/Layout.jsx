@@ -11,6 +11,7 @@ const NavContainer = styled.nav`
   justify-content: center;
   align-items: center;
   border: none;
+  z-index: 10;
 `;
 
 const NavCircle = styled.div`
@@ -24,19 +25,19 @@ const NavCircle = styled.div`
   /**********************path에 따라 변하는 버튼 색 */
 
   :first-child {
-    background-color: ${(props) => (props.pathname === '/' ? '#feff67' : 'white')};
+    background-color: ${(props) => (props.pathname === '/' ? props.theme.colors.mainColor : 'white')};
   }
 
   :nth-child(2) {
-    background-color: ${(props) => (props.pathname === '/collect' ? '#feff67' : 'white')};
+    background-color: ${(props) => (props.pathname === '/collect' ? props.theme.colors.mainColor : 'white')};
   }
 
   :nth-child(3) {
-    background-color: ${(props) => (props.pathname === '/push' ? '#feff67' : 'white')};
+    background-color: ${(props) => (props.pathname === '/push' ? props.theme.colors.mainColor : 'white')};
   }
 
   :nth-child(4) {
-    background-color: ${(props) => (props.pathname === '/pull' ? '#feff67' : 'white')};
+    background-color: ${(props) => (props.pathname === '/pull' ? props.theme.colors.mainColor : 'white')};
   }
 `;
 
