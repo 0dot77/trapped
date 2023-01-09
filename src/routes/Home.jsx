@@ -5,33 +5,35 @@ import HomePath from '../components/HomePath';
 
 const HomeContainer = styled.main`
   font-family: 'Noto Sans KR';
-  font-size: 3rem;
+  font-size: 3.1rem;
   font-weight: 700;
   width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   overflow-y: scroll;
-  line-height: 1.25;
+  line-height: 79.5px;
   color: #000000;
   background-color: ${(props) => (props.changeBackground ? 'black' : 'white')};
 `;
 
 const HomeFakeContainer = styled.div`
   position: relative;
-  height: 100vh;
+  width: 100%;
+  height: inherit;
   display: flex;
   justify-content: center;
 `;
 
 const HomeSection = styled.section`
-  width: 80vw;
+  width: 80%;
+  height: 100%;
   position: relative;
 `;
 
 const HomeEffect = styled.div`
   width: 100%;
-  height: 10vw;
+  height: 10%;
   bottom: 0;
   position: absolute;
   z-index: 100;

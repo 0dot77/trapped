@@ -5,8 +5,14 @@ const colors = {
   white: '#ffffff',
 };
 
+const size = {
+  maxWidth: 1920,
+  maxHeight: 1080,
+};
+
 const theme = {
   colors,
+  size,
 };
 
 export default theme;

@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import { homeBackgroundState } from '../data/atoms';
-
 const HomeTextContainer = styled.p`
   cursor: default;
   color: ${(props) => (props.changeBackground ? props.theme.colors.mainHoverColor : props.theme.colors.black)};

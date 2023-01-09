@@ -1,6 +1,7 @@
 import Router from './Router';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import theme from '../style/theme';
+import Nats from '../assets/font/NATS-Regular.ttf';
 
 const GlobalStyle = createGlobalStyle`
 html, body, div, span, applet, object, iframe,
@@ -28,11 +29,23 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
+html {
+	width:100vw;
+	height: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 body {
 	line-height: 1;
 	color:white;
-	height: 100vh;
+	max-width: 1920px;
+	width: 100%;
+	max-height: 1080px;
+	height: 100%;
 	overflow: hidden;
+	box-sizing: border-box;
 }
 ol, ul {
 	list-style: none;
@@ -60,9 +73,13 @@ table {
 }
 
 @font-face {
-  font-family: 'Nats';
-  src: url('fonts/nats.ttf') format('ttf');
+	font-family: 'Nats';
+	font-style: normal;
+	font-weight: normal;
+	src: url(${Nats}) format('truetype');
 }
+
+
 
 `;
 
