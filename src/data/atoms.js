@@ -2,7 +2,7 @@ import { atom } from 'recoil';
 
 const homeBackgroundState = atom({
   key: 'homeBackground',
-  default: 'white',
+  default: false,
 });
 
 export { homeBackgroundState };

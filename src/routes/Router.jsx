@@ -9,6 +9,7 @@ export default function Router() {
   return (
     <BrowserRouter>
       <Layout />
+
       <Routes>
         <Route
           path="/"
