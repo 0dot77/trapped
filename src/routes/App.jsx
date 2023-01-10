@@ -40,9 +40,7 @@ html {
 body {
 	line-height: 1;
 	color:white;
-	max-width: 1920px;
 	width: 100%;
-	max-height: 1080px;
 	height: 100%;
 	overflow: hidden;
 	box-sizing: border-box;

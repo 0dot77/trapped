@@ -73,6 +73,7 @@ const NavTextContainer = styled.div`
 
   p {
     margin-bottom: 0.8rem;
+    color: ${(props) => (props.pathname === '/push' ? props.theme.colors.mainColor : 'black')};
   }
 `;
 

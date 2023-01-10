@@ -3,6 +3,7 @@ const colors = {
   mainHoverColor: '#353535',
   black: '#000000',
   white: '#ffffff',
+  gray: '#313131',
 };
 
 const size = {
