@@ -48,7 +48,7 @@ export default function Home() {
     <HomeContainer changeBackground={changeBackground}>
       <HomeFakeContainer>
         <HomeSection>
-          <HomePath changeBackground={changeBackground} />
+          <HomePath changeBackgound={changeBackground} />
           <HomeText
             setChangeBackground={setChangeBackground}
             changeBackground={changeBackground}
