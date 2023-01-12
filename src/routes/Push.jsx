@@ -1,5 +1,4 @@
-import { motion, useInView, useScroll, useTransform, useSpring, useMotionValueEvent } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import styled from 'styled-components';
 import pushes from '../data/pushs';
 import PushData from '../components/PushData';
@@ -9,6 +8,7 @@ const PushContainer = styled.main`
   height: 100%;
   background-color: ${(props) => props.theme.colors.black};
   font-family: 'Noto Sans KR';
+  cursor: default;
 `;
 
 const PushSvgContainer = styled.div`
@@ -22,13 +22,8 @@ const PushSvgContainer = styled.div`
   z-index: 0;
 `;
 
-// TODO :
-// 1. 페이지 전체 높이를 받아와서 그 높이를 스크롤 하는 것에 반응하는 SVG 애니메이션 만들기 (0)
-// 2. 해당 에니메이션 아래로, (혹은 위로) 데이터가 등장하는 것을 우선 구현해보고, 괜찮으면 랜덤한 위치에 배치되어 있다가 모여지는 것을 구현해보기.
-
 export default function Push() {
-  const [isComplete, setIsComplete] = useState(false);
-  const { scrollY, scrollYProgress } = useScroll();
+  const { scrollYProgress } = useScroll();
   const yRange = useTransform(scrollYProgress, [0, 1], [0, 1]);
   const pathLength = useSpring(yRange, { stiffness: 400, damping: 100 });
 

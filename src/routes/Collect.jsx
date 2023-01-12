@@ -4,18 +4,18 @@ import collectText from '../data/collectText';
 
 const CollectContainer = styled.main`
   width: 100%;
-  height: 100vh;
   display: flex;
   justify-content: flex-end;
   background-color: ${(props) =>
     Object.keys(props.techs).find((key) => props.techs[key] === true)
       ? props.theme.colors.black
       : props.theme.colors.white};
+  overflow-y: hidden;
 `;
 
 const CollectWrapperContainer = styled.div`
   width: 85%;
-  height: 100%;
+  height: 100vh;
 `;
 
 const TechListContainer = styled.article`
@@ -24,7 +24,7 @@ const TechListContainer = styled.article`
   font-family: 'Nats';
   font-size: 1.25rem;
   user-select: none;
-  position: fixed;
+  position: absolute;
 
   .f {
     background-color: ${(props) => (props.techs.facebook ? props.theme.colors.mainColor : props.theme.colors.white)};
@@ -78,8 +78,9 @@ const TextContainer = styled.div`
   width: 100%;
   margin-top: 15%;
   line-height: 50px;
-  /* height: 100vh; */
+  height: 100vh;
   overflow-y: scroll;
+  cursor: default;
 
   span {
     font-family: ${(props) =>

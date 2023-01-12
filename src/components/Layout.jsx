@@ -12,6 +12,7 @@ const NavContainer = styled.nav`
   justify-content: center;
   border: none;
   z-index: 10;
+  user-select: none;
 `;
 
 const NavCircle = styled.div`
