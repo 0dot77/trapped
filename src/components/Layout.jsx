@@ -6,7 +6,7 @@ const NavContainer = styled.nav`
   width: ${(props) => (props.pathname === '/' ? '10%' : '15%')};
   height: 100%;
   font-family: 'Nats';
-  position: absolute;
+  position: fixed;
   display: flex;
   flex-direction: column;
   justify-content: center;

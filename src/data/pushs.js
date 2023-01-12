@@ -1,4 +1,4 @@
-const pushData = {
+const pushes = {
   0: {
     img: 'assets/images/test.jpg',
     text: [
@@ -20,4 +20,4 @@ const pushData = {
   },
 };
 
-export default pushData;
+export default pushes;

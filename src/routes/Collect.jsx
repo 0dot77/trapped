@@ -13,17 +13,18 @@ const CollectContainer = styled.main`
       : props.theme.colors.white};
 `;
 
-const CollectWrappterContainer = styled.div`
+const CollectWrapperContainer = styled.div`
   width: 85%;
   height: 100%;
 `;
 
 const TechListContainer = styled.article`
-  width: 100%;
+  width: 80%;
   max-height: 25%;
   font-family: 'Nats';
   font-size: 1.25rem;
   user-select: none;
+  position: fixed;
 
   .f {
     background-color: ${(props) => (props.techs.facebook ? props.theme.colors.mainColor : props.theme.colors.white)};
@@ -75,9 +76,9 @@ const TechList = styled.ul`
 
 const TextContainer = styled.div`
   width: 100%;
-  margin-top: 5%;
+  margin-top: 15%;
   line-height: 50px;
-  height: 100vh;
+  /* height: 100vh; */
   overflow-y: scroll;
 
   span {
@@ -276,7 +277,7 @@ export default function Collect() {
   }
   return (
     <CollectContainer techs={techs}>
-      <CollectWrappterContainer>
+      <CollectWrapperContainer>
         <TechListContainer
           techs={techs}
           background={background}
@@ -344,7 +345,7 @@ export default function Collect() {
           background={background}
           techs={techs}
         />
-      </CollectWrappterContainer>
+      </CollectWrapperContainer>
     </CollectContainer>
   );
 }
